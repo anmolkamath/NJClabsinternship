@@ -1,3 +1,4 @@
+#Anmol kamath ,project for NJC labs internship screening.
 import sqlite3
 import sys
 import os
@@ -137,7 +138,7 @@ def main():
     while(1):
         clrscr()
         print(style.BLUE +" ******************************************************************" + style.END)
-        print(style.RED  +"*                    Movie DB by Adithya                         *" + style.END)
+        print(style.RED  +"*                    Movie DB by Anmol                            *" + style.END)
         print(style.BLUE  +" ******************************************************************" + style.END)
         print(style.GREEN +" 1. Is the DataBase Connected ? createTable: Error   ")
         print(" 2. Insert data                                      ")
