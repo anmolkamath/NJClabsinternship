@@ -23,7 +23,7 @@ def connectDB():
 db=connectDB()
 cursor=connectDB().cursor()
 
-## Function to insert Data Into Database
+# Function to insert Data Into Database
 def dataInsert(db):
     movie_name=input("Enter Movie: ")
     actor=input("Enter Actor name: ")
@@ -37,14 +37,14 @@ def dataInsert(db):
     print( style.GREEN  + "\nData saved : ) " + style.END)
 
 
-## Function to Remove data from Database
+# Function to Remove data from Database
 def removeData(db):
     cursor.execute("""DELETE FROM database;""").fetchall()
     db.commit()
     print(style.RED + "Data Deleted !" + style.END)
 
 
-## Function to Find Movies By an Actor
+# Function to Find Movies By an Actor
 def actor():
     act=str(input("Enter Actor Name : "))
     c=cursor.execute("""SELECT movie FROM database WHERE actor=(?);""",(act,)).fetchall()
@@ -55,7 +55,7 @@ def actor():
         print(style.RED + "No Actor Found : (" + style.END)   
 
 
-## Function to Find Movies By an Actress
+# Function to Find Movies By an Actress
 def actress():
     act=str(input("Enter Actress Name : "))
     c=cursor.execute("""SELECT movie FROM database WHERE actress=(?);""",(act,)).fetchall()
@@ -67,7 +67,7 @@ def actress():
 
 
 
-## Function to Find Movies By a Director
+# Function to Find Movies By a Director
 def director():
     director=str(input("Enter the director name : "))
     c=cursor.execute("""SELECT movie FROM database WHERE director=(?);""",(director,)).fetchall()
@@ -77,7 +77,7 @@ def director():
     if c==[]:
          print(style.RED + "No Dicrectors Found : (" + style.END)  
 
-## Function to Find Movies By a Year             
+# Function to Find Movies By a Year             
 def year():
     year=str(input("Enter the release year : "))
     c=cursor.execute("""SELECT movie FROM database WHERE year=(?);""",(year,)).fetchall()
@@ -112,7 +112,7 @@ def displayDB():
     print("Year  = ", Year)
 
 
-#Function to create Table
+# Function to create Table
 def createTable(db):
     t=cursor.execute("""SELECT * FROM sqlite_master WHERE type='table' and name="database" ; """).fetchall()
     if t==[]:
